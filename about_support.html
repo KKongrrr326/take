@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="Family Playground. 온 가족이 따로 또 같이 즐길 수 있는 새로운 호텔">
+    <title>테이크호텔</title>
+    <link rel="shortcut icon" href="/img/take_favicon.ico">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- selectBox CSS -->
+    <link rel="stylesheet" href="plugin/selectBox_custom/selectric.css">
+    <!-- scrollbar css -->
+    <link href="plugin/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="headers"></div>
+        <div id="about">
+            <div class="visual-head">
+                <div class="pageTitle">
+                    <h1>Customer Service</h1>
+                </div>
+            </div>
+            <!-- end visual-head -->
+            <div class="common-effect">
+                <div class="support container inner-common">
+                    <h1>문의하기</h1>
+                    <div class="data-form">
+                        <table>
+                            <colgroup>
+                                <col width="30%">
+                                <col width="70%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <p>문의유형</p>
+                                    </th>
+                                    <td>
+                                        <div class="selectBox width-100 contact-type">
+                                            <select name="" id="" class="mCustomScrollbar" data-mcs-theme="dark-thick">
+                                                <option value="">선택</option>
+                                                <option value="">객실 / 패키지 예약 관련</option>
+                                                <option value="">액티비티 프로그램 관련</option>
+                                                <option value="">호텔 시설 이용 안내</option>
+                                                <option value="">서비스 이용 안내</option>
+                                                <option value="">대관 문의</option>
+                                                <option value="">멤버십 및 단체 예약 문의</option>
+                                                <option value="">홈페이지 이용 관련</option>
+                                                <option value="">채용 관련 문의</option>
+                                                <option value="">기타 문의</option>
+                                            </select>
+                                        </div>
+                                        <!-- end selectBox -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>제목</p>
+                                    </th>
+                                    <td><input type="text" name="" id="" placeholder="제목을 입력하세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>내용</p>
+                                    </th>
+                                    <td><textarea name="" id="" placeholder="내용을 입력하세요."></textarea></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>이름</p>
+                                    </th>
+                                    <td><input type="text" name="" id="" placeholder="이름을 입력하세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>휴대폰</p>
+                                    </th>
+                                    <td><input type="text" name="" id="" placeholder="'-'없이 번호만 입력"></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>이메일</p>
+                                    </th>
+                                    <td><input type="text" name="" id="" placeholder="이메일 주소"></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>첨부파일</p>
+                                    </th>
+                                    <td class="attach">
+                                        <input readonly class="file-name" type="text" value="선택된 파일이 없습니다.">
+                                        <input type="file" id="upload" style="display: none;"><label class="upload-btn" for="upload">파일선택</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end data-form -->
+                    <div class="post-btn"><input type="submit" value="보내기"></div>
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end common-effect -->
+        </div>
+        <!-- end about -->
+        <div id="footers"></div>
+    </div>
+    <!-- end wrap -->
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Scrollbar -->
+    <script src="plugin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- selectBox.js -->
+    <script src="plugin/selectBox_custom/jquery.selectric.js"></script>
+    <script>
+        $('select').selectric({
+            disableOnMobile: false,
+            nativeOnMobile: false
+        });
+        $(function() {
+
+
+
+
+            var fileTarget = $('#upload');
+            fileTarget.on('change', function() {
+                var file_name = $("#upload").val();
+                $(".file-name").val(file_name);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
