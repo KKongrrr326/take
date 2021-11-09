@@ -373,10 +373,15 @@
 
 #booking .input-area .cm-box {
     flex: 1;
+    padding-right: 30px;
 }
 
-#booking .input-area .cm-box {
-    padding-right: 30px;
+#booking .check-date .col-tit h2::after {
+    content: "*";
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-left: 5px;
 }
 
 #booking .input-area .cm-box:last-child {
@@ -483,6 +488,16 @@
     text-align: center;
 }
 
+#booking .room-type .tabContent .empty-box {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#booking .room-type .tabContent .empty-box p {
+    font-size: 16px;
+}
+
 
 /* booking - section 03 */
 
@@ -521,6 +536,20 @@
     vertical-align: bottom;
 }
 
+
+/* 
+#booking .customer-info .stay-info .cm-box {
+    vertical-align: top;
+}
+
+#booking .customer-info .floor .cm-box .alert,
+#booking .customer-info .floor .email-inp .alert {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+ */
+
 #booking .customer-info .user-name,
 #booking .customer-info .email-inp {
     display: inline-block;
@@ -536,6 +565,14 @@
 
 #booking .customer-info .user-name .cm-box {
     margin-right: 30px;
+}
+
+#booking .customer-info .cm-box .thead::after {
+    content: "*";
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-left: 5px;
 }
 
 #booking .customer-info .email-inp .at {
@@ -584,10 +621,6 @@
 
 #booking .agreement .use-info .noti {
     margin-bottom: 30px;
-}
-
-#booking .agreement .use-info .noti:last-child {
-    margin-bottom: 0;
 }
 
 #booking .agreement .use-info ul {
@@ -712,10 +745,11 @@
 
 #success .intro-area .program-intro .line-box {
     position: relative;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 
-#success .intro-area .program-intro .line-box::before {
+
+/* #success .intro-area .program-intro .line-box::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -726,9 +760,10 @@
     background: #4ec3e0;
     border-radius: 50%;
     z-index: 8;
-}
+} */
 
-#success .intro-area .program-intro .line-box .date::before {
+
+/* #success .intro-area .program-intro .line-box .date::before {
     content: "";
     position: absolute;
     top: 5px;
@@ -737,11 +772,12 @@
     border-left: 1px solid #333436;
     height: 280px;
     z-index: 1;
-}
+} */
 
-#success .intro-area .program-intro .line-box:last-child .date::before {
+
+/* #success .intro-area .program-intro .line-box:last-child .date::before {
     display: none;
-}
+} */
 
 .intro-area {
     font-size: 0;
@@ -778,6 +814,7 @@
 
 .intro-area .program-intro .element-box {
     font-size: 0;
+    margin-bottom: 20px;
 }
 
 .intro-area .program-intro .element-box .intro-thum {
@@ -1998,6 +2035,30 @@
     margin-bottom: 15px;
 }
 
+#mypage .row-floor .booking-user .tit-box {
+    font-size: 0;
+    margin-bottom: 15px;
+}
+
+#mypage .row-floor .cm-split .tit-box p {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    color: #fff;
+    font-size: 18px;
+}
+
+#mypage .row-floor .cm-split .tit-box input[type="button"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    text-align: right;
+    font-size: 16px;
+    color: #4ec3e0;
+    border: none;
+    background: transparent;
+}
+
 #mypage .row-floor .cm-split .cm-artice {
     border-radius: 10px;
 }
@@ -2520,6 +2581,10 @@
     border-top: 2px solid #000;
 }
 
+#about .inner-common .data-form .selectric-items {
+    overflow-y: auto;
+}
+
 #about .inner-common table th,
 #about .inner-common table td {
     padding: 15px 0;
@@ -2538,6 +2603,16 @@
     color: #4ec3e0;
     font-size: 16px;
     margin-left: 5px;
+}
+
+#about .inner-common table .not-after p::after {
+    display: none;
+}
+
+#about .inner-common table td .alert {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 10px;
 }
 
 #about .inner-common table td input[type="text"] {

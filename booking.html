@@ -8,7 +8,7 @@
     <meta property="og:image" content="img/og_image.jpg">
     <meta property="og:description" content="Family Playground. 온 가족이 따로 또 같이 즐길 수 있는 새로운 호텔">
     <title>테이크호텔</title>
-    <link rel="shortcut icon" href="/img/take_favicon.ico">
+    <link rel="shortcut icon" href="img/take_favicon.ico">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -87,15 +87,15 @@
                                 </colgroup>
                                 <tr>
                                     <th>성인 조식</th>
-                                    <td>0 원</td>
+                                    <td>1</td>
                                 </tr>
                                 <tr>
                                     <th>소인 조식</th>
-                                    <td>0 원</td>
+                                    <td>0</td>
                                 </tr>
                                 <tr>
                                     <th>객실 수</th>
-                                    <td>0 실</td>
+                                    <td>1</td>
                                 </tr>
                             </table>
                             <ul class="guide-line">
@@ -210,7 +210,7 @@
                                 <div class="selectBox selectType01" style="z-index: 21;">
                                     <select name="" id="">
                                         <option value="">0</option>
-                                        <option value="">1</option>
+                                        <option selected value="">1</option>
                                         <option value="">2</option>
                                         <option value="">3</option>
                                         <option value="">4</option>
@@ -342,10 +342,19 @@
                                 <!-- end info-txt -->
                             </div>
                             <!-- end room-info -->
+                            <!-- 21/11/05 empty-box add -->
+                            <div class="empty-box">
+                                <p>해당 조건에 이용 가능한 객실이 없습니다.</p>
+                            </div>
+                            <!---------------------------->
                         </div>
                         <!-- end tabContent -->
                         <div class="tabContent">
-
+                            <!-- 21/11/05 empty-box add -->
+                            <div class="empty-box">
+                                <p>해당 조건에 이용 가능한 객실이 없습니다.</p>
+                            </div>
+                            <!---------------------------->
                         </div>
                         <!-- end tabContent -->
                     </div>
@@ -359,13 +368,13 @@
                     <!-- end part-name -->
                     <div class="inner-content font-0">
                         <!-- 21/07/01 line 443 checkin&out content 추가 -->
-                        <!-- <div class="common-info">
+                        <div class="common-info check-date">
                             <div class="col-tit">
-                                <h2>체크인 / 체크아웃 (필수)</h2>
+                                <h2>체크인 예상 시간</h2>
                             </div>
                             <div class="input-area">
                                 <div class="cm-box">
-                                    <p class="thead">체크인 예상 시간</p>
+                                    <!-- <p class="thead">체크인 예상 시간</p> -->
                                     <div class="selectBox selectType04" style="z-index: 24;">
                                         <select name="" id="">
                                             <option value="">15:00</option>
@@ -378,7 +387,7 @@
                                     </div>
                                 </div>
                                 <div class="cm-box">
-                                    <div class="thead">
+                                    <!-- <div class="thead">
                                         <p>체크아웃 예상 시간</p>
                                     </div>
                                     <div class="selectBox selectType05" style="z-index: 23;">
@@ -388,11 +397,11 @@
                                             <option value="">10:00</option>
                                             <option value="">11:00</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="cm-box"></div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- end common-info -->
                         <div class="common-info">
                             <div class="col-tit">
@@ -415,7 +424,7 @@
                                 </div>
                                 <!-- end cm-box -->
                                 <div class="cm-box">
-                                    <div class="thead">
+                                    <!-- <div class="thead">
                                         <p>아동 조식</p>
                                         <button>
                                             <a id="toolTip" href="#">
@@ -424,7 +433,6 @@
                                             <i class="fas fa-exclamation"></i>
                                         </button>
                                     </div>
-                                    <!-- end thead -->
                                     <div class="selectBox selectType07" style="z-index: 21;">
                                         <select name="" id="">
                                             <option value="">0</option>
@@ -434,11 +442,11 @@
                                             <option value="">4</option>
                                             <option value="">5</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- end cm-box -->
                                 <div class="cm-box">
-                                    <div class="thead">
+                                    <!-- <div class="thead">
                                         <p>엑스트라 베드</p>
                                         <button>
                                             <a id="toolTip" href="#">
@@ -447,7 +455,6 @@
                                             <i class="fas fa-exclamation"></i>
                                         </button>
                                     </div>
-                                    <!-- end thead -->
                                     <div class="selectBox selectType08">
                                         <select name="" id="">
                                             <option value="">0</option>
@@ -457,7 +464,7 @@
                                             <option value="">4</option>
                                             <option value="">5</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- end cm-box -->
                             </div>
@@ -583,14 +590,14 @@
                             <!-- end col-tit -->
                             <div class="floor">
                                 <div class="user-name">
-                                    <div class="cm-box">
+                                    <div class="cm-box first-inp">
                                         <p class="thead">성</p>
-                                        <input type="text" name="" id="" placeholder="홍">
+                                        <input type="text" name="" id="first-nm" placeholder="홍">
                                     </div>
                                     <!-- end cm-box -->
-                                    <div class="cm-box">
+                                    <div class="cm-box last-inp">
                                         <p class="thead">이름</p>
-                                        <input type="text" name="" id="" placeholder="길동">
+                                        <input type="text" name="" id="last-nm" placeholder="길동">
                                     </div>
                                     <!-- end cm-box -->
                                 </div>
@@ -598,10 +605,10 @@
                                 <div class="cm-box cm-select">
                                     <p class="thead">성별</p>
                                     <div class="selectBox selectType11" style="z-index: 22;">
-                                        <select name="" id="">
-                                            <option value="">성별을 선택해주세요.</option>
-                                            <option value="">남</option>
-                                            <option value="">여</option>
+                                        <select name="gender-sel" id="gender-sel">
+                                            <option value="non-sel">성별을 선택해주세요.</option>
+                                            <option value="01">남</option>
+                                            <option value="02">여</option>
                                         </select>
                                     </div>
                                     <!-- end selectBox -->
@@ -610,21 +617,21 @@
                             </div>
                             <!-- end floor -->
                             <div class="floor">
-                                <div class="cm-box">
+                                <div class="cm-box cell-inp">
                                     <p class="thead">휴대전화</p>
-                                    <input type="text" name="" id="" placeholder="'-' 없이 번호만 입력">
+                                    <input type="text" name="" id="user-phone" placeholder="'-' 없이 번호만 입력">
                                 </div>
                                 <!-- end cm-box -->
                                 <div class="email-inp">
                                     <div class="cm-box">
                                         <p class="thead">이메일</p>
-                                        <input type="text" name="" id="" placeholder="이메일 아이디">
+                                        <input type="text" name="" id="user-email" placeholder="이메일 아이디">
                                     </div>
                                     <!-- end cm-box -->
                                     <span class="at">@</span>
                                     <div class="cm-box">
                                         <div class="selectBox addr-select selectType12" style="z-index: 21;">
-                                            <select name="" id="" class="addr-sel02">
+                                            <select name="e-addr" id="" class="addr-sel02">
                                                 <option value="naver.com">naver.com</option>
                                                 <option value="hanmail.net">hanmail.net</option>
                                                 <option value="gmail.com">gmail.com</option>
@@ -647,7 +654,7 @@
                     </div>
                     <!-- end inner-content -->
                     <div class="next-btn">
-                        <input type="button" value="다음으로">
+                        <input type="button" value="다음으로" onclick="moveStep04();">
                     </div>
                 </section>
                 <section id="moveTab04" class="agreement">
@@ -671,6 +678,7 @@
                             <div class="col-tit">
                                 <h2>이용 안내</h2>
                             </div>
+                            <!-- 21/11/03 tos-box 워딩 수정 -->
                             <div class="tos-box">
                                 <div class="noti">
                                     <p>유의사항</p>
@@ -690,8 +698,7 @@
                                         <li>
                                             <p class="point"></p>
                                         </li>
-                                        <li>스마트 체크인/ 체크아웃<br> 체크인 : 예약시 입력해주신 투숙객 정보로 00시 스마트키 발송 예정 입니다.<br> 체크아웃 : 스마트키 화면에 있는 '체크아웃'버튼을 눌러주셔야 합니다. ‘체크아웃' 후에는 다시 체크인이 어려우니 유의바랍니다.
-                                        </li>
+                                        <li>스마트 체크인/ 체크아웃<br> 체크인 : 예약시 입력해주신 체크인 시간에 스마트키 발송될 예정 입니다.<br> 체크아웃 : 스마트키 화면에 있는 '익스프레스 체크아웃' 버튼을 눌러주셔야 합니다. ‘체크아웃' 후에는 다시 체크인이 어려우니 유의바랍니다.</li>
                                     </ul>
                                     <ul>
                                         <li>
@@ -731,13 +738,7 @@
                                         <li>
                                             <p class="point"></p>
                                         </li>
-                                        <li>[비수기] 체크인 3일 전 : 위약금 없음 / 체크인 2일 전: 객실료의 30% 취소 위약금 부과 / 체크인 1일 전: 객실료의 50% 취소 위약금 부과 / 당일 취소 및 No-Show: 객실료의 100% 취소 위약금 부과</li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <p class="point"></p>
-                                        </li>
-                                        <li>[성수기] 5-6일전 객실료의 30% 취소 위약금 부과 / 투숙일 3-4일전 객실료 50% 취소 위약금 부과 투숙일 1-2일전 객실료의 100% (No-show포함)</li>
+                                        <li>1일 전 및 당일 No-Show의 경우 위약금 100% 부과</li>
                                     </ul>
                                 </div>
                                 <!-- end noti -->
@@ -747,7 +748,7 @@
                                         <li>
                                             <p class="point"></p>
                                         </li>
-                                        <li>예약된 고객이라도 프런트데스크에서 실시하는 체열 검사시 37.5도 이상 감지되는 분은 입실이 제한될 수 있습니다.</li>
+                                        <li>예약된 고객이라도 입구에서 실시하는 체열 검사시 37.5도 이상 감지되는 분은 입실이 제한될 수 있습니다.</li>
                                     </ul>
                                     <ul>
                                         <li>
@@ -792,6 +793,7 @@
     <!-- selectBox.js -->
     <script src="plugin/selectBox_custom/jquery.selectric.js"></script>
     <script>
+        var n = "";
         $(function() {
 
             $('select').selectric({
@@ -828,13 +830,28 @@
                 $(".direct02").hide();
             });
 
-            // 21/07/01 line 857 selectBox 수정
+
+            // step02
+            $("#booking .room-type .room-info .info-txt .move-link").click(function() {
+                $("#booking .option-select").addClass("show");
+                var scrollPosition = $("#booking .option-select").offset().top;
+                $("body,html").animate({
+                    scrollTop: scrollPosition
+                }, 500);
+
+                return false;
+            });
+
+            // 21/11/03 line 826 결제 버튼 수정
 
             $("#booking .total-price input[type='button']").click(function() {
                 if ($("#booking .agreement .tos-box input[type='checkbox']").is(":checked") == true) {
                     $(".paymentBg").show()
                     $("#modal.payment-receipt").show();
                     $("html,body").addClass("hidden");
+
+                } else {
+                    alert("개인정보 수집 및 이용에 관한 동의에 체크하세요.");
                 }
             });
 
@@ -883,6 +900,12 @@
 
             });
 
+            // 21/11/03 line 881 체크인/체크아웃 placeholder 추가 
+            var now = new Date();
+            var tomorrow = new Date(now.setDate(now.getDate() + 1));
+            $("#datepicker-checkIn").datepicker().datepicker("setDate", new Date());
+            $("#datepicker-checkOut").datepicker().datepicker("setDate", tomorrow);
+
             (function($) {
                 $(window).on("load", function() {
                     $(".payment-receipt .scroll-bar").mCustomScrollbar({
@@ -892,8 +915,49 @@
             })
 
 
+            $("#booking .customer-info .stay-info .apply input[type='checkbox']").click(function() {
+                if ($(this).is(":checked") == true) {
+                    $("#booking .customer-info .stay-info .floor").hide();
+                    $("#moveTab03 .next-btn input[type='button']").click(function() {
+                        $(".popNoti-bg").addClass("show");
+                        $("#modal.noti-modal").addClass("show");
+                    });
+                    n = "y";
+                } else {
+                    $("#booking .customer-info .floor").show();
+
+                }
+
+            });
+
         });
+
+
+        function moveStep04() {
+            if (n != "y") {
+                var gen_option = $("select[name='gender-sel']").val();
+                if (!$("#first-nm").val()) {
+                    alert("필수 항목을 모두 입력하세요.")
+                } else if (!$("#last-nm").val()) {
+                    alert("필수 항목을 모두 입력하세요.")
+                } else if (gen_option == "non-sel") {
+                    alert("필수 항목을 모두 입력하세요.")
+                } else if (!$("#user-phone").val()) {
+                    alert("필수 항목을 모두 입력하세요.")
+                } else if (!$("#user-email").val()) {
+                    alert("필수 항목을 모두 입력하세요.")
+                } else {
+                    $(".popNoti-bg").addClass("show");
+                    $("#modal.noti-modal").addClass("show");
+
+                }
+            }
+
+
+
+        }
     </script>
+
 </body>
 
 </html>

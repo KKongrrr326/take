@@ -23,7 +23,7 @@
     <!-- selectBox CSS -->
     <link rel="stylesheet" href="plugin/selectBox_custom/selectric.css">
     <!-- scrollbar css -->
-    <link href="plugin/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="plugin/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" /> -->
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             </div>
             <!-- end visual-head -->
             <div class="common-effect">
-                <div class="partnership container inner-common">
+                <form id="fr_propose" name="fr_propose" class="partnership container inner-common">
                     <h1>제안하기</h1>
                     <div class="data-form">
                         <table>
@@ -46,56 +46,72 @@
                                 <col width="70%">
                             </colgroup>
                             <tbody>
-                                <tr>
+                                <tr class="data-fr01">
                                     <th>
                                         <p>문의유형</p>
                                     </th>
                                     <td>
                                         <div class="selectBox width-100 contact-type">
-                                            <select name="" id="" class="mCustomScrollbar" data-mcs-theme="dark-thick">
-                                                <option value="">선택</option>
-                                                <option value="">프로그램 제안</option>
-                                                <option value="">객실 상품 제안</option>
-                                                <option value="">이벤트 제안</option>
-                                                <option value="">협업 / 제휴 제안</option>
-                                                <option value="">강의 및 클래스 제안</option>
-                                                <option value="">기타 아이디어 제안</option>
+                                            <select name="type-sel" id="type-sel" onchange="changeSel()">
+                                                <option value="non-sel">선택</option>
+                                                <option value="type01">프로그램 제안</option>
+                                                <option value="type02">객실 상품 제안</option>
+                                                <option value="type03">이벤트 제안</option>
+                                                <option value="type04">협업 / 제휴 제안</option>
+                                                <option value="type05">강의 및 클래스 제안</option>
+                                                <option value="type06">기타 아이디어 제안</option>
                                             </select>
                                         </div>
+                                        <p class="alert"></p>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="data-fr02">
                                     <th>
                                         <p>제목</p>
                                     </th>
-                                    <td><input type="text" name="" id="" placeholder="제목을 입력하세요"></td>
+                                    <td>
+                                        <input type="text" name="" id="tit_inp" placeholder="제목을 입력하세요">
+                                        <p class="alert"></p>
+                                    </td>
                                 </tr>
-                                <tr>
+                                <tr class="data-fr03">
                                     <th>
                                         <p>내용</p>
                                     </th>
-                                    <td><textarea name="" id="" placeholder="내용을 입력하세요."></textarea></td>
+                                    <td>
+                                        <textarea name="content" id="content_inp" placeholder="내용을 입력하세요."></textarea>
+                                        <p class="alert"></p>
+                                    </td>
                                 </tr>
-                                <tr>
+                                <tr class="data-fr04">
                                     <th>
                                         <p>고객명</p>
                                     </th>
-                                    <td><input type="text" name="" id="" placeholder="이름을 입력하세요"></td>
+                                    <td>
+                                        <input type="text" name="" id="user_nm" placeholder="이름을 입력하세요">
+                                        <p class="alert"></p>
+                                    </td>
                                 </tr>
-                                <tr>
+                                <tr class="data-fr05">
                                     <th>
                                         <p>휴대폰</p>
                                     </th>
-                                    <td><input type="text" name="" id="" placeholder="'-'없이 번호만 입력"></td>
+                                    <td>
+                                        <input type="text" name="" id="user_cell" placeholder="'-'없이 번호만 입력">
+                                        <p class="alert"></p>
+                                    </td>
                                 </tr>
-                                <tr>
+                                <tr class="data-fr06">
                                     <th>
                                         <p>이메일</p>
                                     </th>
-                                    <td><input type="text" name="" id="" placeholder="이메일 주소"></td>
+                                    <td>
+                                        <input type="text" name="" id="user_email" placeholder="이메일 주소">
+                                        <p class="alert"></p>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th>
+                                    <th class="not-after">
                                         <p>첨부파일</p>
                                     </th>
                                     <td class="attach">
@@ -107,8 +123,8 @@
                         </table>
                     </div>
                     <!-- end data-form -->
-                    <div class="post-btn"><input type="submit" value="보내기"></div>
-                </div>
+                    <div class="post-btn"><input id="postBtn" type="button" value="보내기" onclick="sendPro();"></div>
+                </form>
                 <!-- end container -->
             </div>
             <!-- end common-effect -->
@@ -124,7 +140,7 @@
     <!-- selectBox.js -->
     <script src="plugin/selectBox_custom/jquery.selectric.js"></script>
     <!-- Scrollbar -->
-    <script src="plugin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- <script src="plugin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> -->
     <script>
         $(function() {
 
@@ -140,6 +156,94 @@
             });
 
         });
+
+
+        function changeSel() {
+            var selectedEl = document.getElementById("type-sel");
+            var optionVal = selectedEl.options[selectedEl.selectedIndex].value;
+            if (optionVal != "non-sel") {
+                $(".partnership .data-fr01 .alert").text("");
+            }
+        }
+        $("#tit_inp").keyup(function() {
+            var tit_val = $("#tit_inp").val();
+            if (tit_val) {
+                $(".partnership .data-fr02 .alert").text("");
+            }
+        });
+        $("#content_inp").keyup(function() {
+            var content_val = $("#content_inp").val();
+            if (content_val) {
+                $(".partnership .data-fr03 .alert").text("");
+            }
+        });
+        $("#user_nm").keyup(function() {
+            var name_val = $("#user_nm").val();
+            if (name_val) {
+                $(".partnership .data-fr04 .alert").text("");
+            }
+        });
+        $("#user_cell").keyup(function() {
+            var cell_val = $("#user_cell").val();
+            if (cell_val) {
+                $(".partnership .data-fr05 .alert").text("");
+            }
+        });
+        $("#user_email").keyup(function() {
+            var email_val = $("#user_email").val();
+            if (email_val) {
+                $(".partnership .data-fr06 .alert").text("");
+            }
+        });
+
+
+        function sendPro() {
+
+            var type_option = $("select[name='type-sel']").val();
+
+            if (type_option == "non-sel" || !$("#tit_inp").val() || !$("#content_inp").val() || !$("#user_nm").val() || !$("#user_cell").val() || !$("#user_email").val()) {
+
+                if (type_option == "non-sel") {
+                    $(".partnership .data-fr01 .alert").text("문의 유형을 선택하세요.");
+
+                } else {
+                    $(".partnership .data-fr01 .alert").text("");
+                }
+
+                if (!$("#tit_inp").val()) {
+                    $(".partnership .data-fr02 .alert").text("제목을 입력하세요.");
+
+                } else {
+                    $(".partnership .data-fr02 .alert").text("");
+                }
+                if (!$("#content_inp").val()) {
+                    $(".partnership .data-fr03 .alert").text("내용을 입력하세요.");
+                } else {
+                    $(".partnership .data-fr03 .alert").text("");
+                }
+                if (!$("#user_nm").val()) {
+                    $(".partnership .data-fr04 .alert").text("이름을 입력하세요.");
+                } else {
+                    $(".partnership .data-fr04 .alert").text("");
+                }
+                if (!$("#user_cell").val()) {
+                    $(".partnership .data-fr05 .alert").text("휴대폰 번호를 입력하세요.");
+                } else {
+                    $(".partnership .data-fr05 .alert").text("");
+                }
+                if (!$("#user_email").val()) {
+                    $(".partnership .data-fr06 .alert").text("이메일을 입력하세요.");
+                } else {
+                    $(".partnership .data-fr06 .alert").text("");
+                }
+            } else {
+
+                alert("문의하신 내용이 전달 되었습니다. 빠른 시일 내에 답변 드리겠습니다.")
+
+            }
+
+
+        }
     </script>
 </body>
 

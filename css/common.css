@@ -734,7 +734,7 @@ aside nav ul li:last-child {
     cursor: pointer;
     position: relative;
     border-radius: 10px;
-    background: linear-gradient(to top, rgba(27, 28, 29, .2), rgba(27, 28, 29, .4) 48%, #1b1c1d);
+    background: linear-gradient(to bottom, rgba(27, 28, 29, .2), rgba(27, 28, 29, .4) 48%, #1b1c1d);
     font-size: 0;
 }
 
@@ -743,7 +743,7 @@ aside nav ul li:last-child {
     top: 20px;
     left: 20px;
     width: 60px;
-    opacity: .5;
+    opacity: 1;
 }
 
 .thum-vertical .fa-heart {
@@ -998,6 +998,10 @@ aside nav ul li:last-child {
     right: unset;
     display: inline-block;
     vertical-align: middle;
+}
+
+#slideControl-01 .slick-track {
+    margin-left: 0;
 }
 
 

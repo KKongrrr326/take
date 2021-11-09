@@ -224,7 +224,7 @@
         line-height: 2rem;
     }
     footer .foot-info p span {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         color: #707070;
     }
     footer .foot-nav li a {
@@ -1350,6 +1350,9 @@
         width: 100%;
         padding-right: 0;
     }
+    #toolTip {
+        z-index: 26;
+    }
     /* booking - section 04 */
     #booking .customer-info .reservation-info {
         margin-bottom: 4.5rem;
@@ -1396,6 +1399,13 @@
     }
     #booking .customer-info .email-inp span {
         font-size: 1.4rem;
+    }
+    #booking .customer-info .stay-info .col-tit h2 {
+        width: 100%;
+    }
+    #booking .customer-info .stay-info .col-tit .apply {
+        text-align: right;
+        width: 100%;
     }
     /* booking : section 05 */
     #booking .agreement .inner-content {
@@ -2116,6 +2126,15 @@
     #mypage .row-floor .cm-split .thead {
         font-size: 1.4rem;
         margin-bottom: 1.5rem;
+    }
+    #mypage .row-floor .booking-user .tit-box {
+        margin-bottom: 1.5rem;
+    }
+    #mypage .row-floor .cm-split .tit-box p {
+        font-size: 1.4rem;
+    }
+    #mypage .row-floor .cm-split .tit-box input[type="button"] {
+        font-size: 1.4rem;
     }
     #mypage .stay-info .cm-split .cm-artice {
         padding: 2rem 1rem;

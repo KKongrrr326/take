@@ -8,7 +8,7 @@
     <meta property="og:image" content="img/og_image.jpg">
     <meta property="og:description" content="Family Playground. 온 가족이 따로 또 같이 즐길 수 있는 새로운 호텔">
     <title>테이크호텔</title>
-    <link rel="shortcut icon" href="/img/take_favicon.ico">
+    <link rel="shortcut icon" href="img/take_favicon.ico">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -59,8 +59,12 @@
                     <!-- end pageHead -->
                     <div class="inner-content reservation">
                         <div class="row-floor stay-info">
-                            <div class="cm-split">
-                                <p class="thead">예약정보</p>
+                            <div class="cm-split booking-user">
+                                <div class="tit-box">
+                                    <p>예약정보</p>
+                                    <input type="button" value="예약 취소" onclick="location.href='my_reservation_empty.html'">
+                                </div>
+                                <!-- end thead -->
                                 <div class="cm-artice user-info">
                                     <ul>
                                         <li class="user-name"><i class="fas fa-user-alt"></i>김조은</li>
@@ -79,7 +83,7 @@
                                     </div>
                                     <div class="date">
                                         <p>04.18.</p>
-                                        <span>10:00 a.m.</span>
+                                        <span>11:00 a.m.</span>
                                     </div>
                                 </div>
                                 <!-- end cm-artice -->
