@@ -40,13 +40,14 @@
                     </div>
                     <!-- end modalBody -->
                     <div class="modalFooter">
-                        <input type="button" class="hide-btn" value="아니오">
                         <input type="button" class="again-btn" value="네, 취소할게요" onclick="booking_cancel();">
+                        <input type="button" class="hide-btn" value="아니오">
                     </div>
                     <!-- end modalFooter -->
                 </div>
                 <!-- end modal -->
             </div>
+            <!-- end modal-bg -->
             <div class="container font-0">
                 <aside>
                     <p class="pageTitle">My</p>
@@ -87,7 +88,7 @@
                                         <div class="cm-split booking-user">
                                             <div class="tit-box">
                                                 <p>예약정보</p>
-                                                <input class="cancel-btn" type="button" value="예약 취소">
+                                                <input type="button" value="예약 취소" onclick="cancel();">
                                             </div>
                                             <!-- end thead -->
                                             <div class="cm-artice user-info">
@@ -216,7 +217,7 @@
                                         <div class="cm-split booking-user">
                                             <div class="tit-box">
                                                 <p>예약정보</p>
-                                                <input class="cancel-btn" type="button" value="예약 취소">
+                                                <input type="button" value="예약 취소" onclick="cancel();">
                                             </div>
                                             <!-- end thead -->
                                             <div class="cm-artice user-info">
@@ -377,22 +378,21 @@
             });
         });
 
-        // line 380 21/11/15 modal 추가
-        $("#myBooking .reservation .cancel-btn").click(function() {
+        // line 381 function cancel 추가
+
+        function cancel() {
             $(".modal-bg").show();
             $("#modal.cancel-modal").show();
-        });
-
-        $("#modal.cancel-modal .modalFooter input").click(function() {
-            $(".modal-bg").hide();
-            $("#modal.cancel-modal").hide();
-        });
+        }
 
         $("#modal.cancel-modal .modalHeader .hide-btn").click(function() {
             $(".modal-bg").hide();
             $("#modal.cancel-modal").hide();
         });
-
+        $("#modal.cancel-modal .modalFooter input").click(function() {
+            $(".modal-bg").hide();
+            $("#modal.cancel-modal").hide();
+        });
 
         function booking_cancel() {
             var today = new Date();
@@ -406,7 +406,7 @@
             if (thisDay == reservation_data) {
                 alert("당일 예약 취소는 예약실로 문의바랍니다. 전화 : 02-2000-7100");
             } else {
-                alert("예약 취소가 접수 되었습니다. 취소 완료 시 문자로 안내 드리겠습니다.");
+                alert("취소처리 되었습니다.");
 
             }
         }
