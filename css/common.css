@@ -327,7 +327,7 @@ input[type="checkbox"]:checked+label::before {
 
 #modal .modalFooter input[type="button"] {
     padding: 12px 30px;
-    border: none;
+    border: 1px solid #4ec3e0;
     background: #4ec3e0;
     color: #fff;
     font-family: 'Poppins', sans-serif;
@@ -481,14 +481,20 @@ input[type="checkbox"]:checked+label::before {
     font-size: 16px;
 }
 
-#modal.cancel-modal .modalFooter .hide-btn {
-    border: 1px solid #4ec3e0;
-    color: #4ec3e0;
-    background: transparent;
+#modal.cancel-modal .modalFooter input {
+    padding: 12px 0;
 }
 
 #modal.cancel-modal .modalFooter .again-btn {
+    color: #4ec3e0;
+    background: transparent;
+    padding: 12px 5px;
+    width: 115px;
+}
+
+#modal.cancel-modal .modalFooter .hide-btn {
     margin-left: 5px;
+    width: 145px;
 }
 
 
