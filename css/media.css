@@ -620,6 +620,12 @@
     #modal .modalBody .edit-form .addr-select {
         width: 45%;
     }
+    #modal .modalBody .edit-form .addr-select .selBoxDirect {
+        width: 100%;
+    }
+    #modal .modalBody .edit-form .addr-select .selBoxDirect input {
+        width: 100%;
+    }
     #modal .modalFooter {
         padding: 1rem;
     }
@@ -1471,10 +1477,10 @@
     }
     #success .inner-content {
         padding: 0;
+        margin-bottom: 5rem;
     }
     #success .intro-area .program-intro .line-box {
-        padding: 0 0 0 2rem;
-        margin-bottom: 5rem;
+        padding: 0;
     }
     #success .intro-area .program-intro .line-box::before {
         top: .5rem;
@@ -1504,9 +1510,6 @@
         display: block;
     }
     /* common intro-area */
-    .intro-area {
-        font-size: 0;
-    }
     .intro-area .headArea {
         margin-bottom: 3rem;
         padding: 0;
@@ -1522,6 +1525,9 @@
     .intro-area .program-intro .line-box .date {
         font-size: 1.4rem;
         margin-bottom: 1rem;
+    }
+    .intro-area .program-intro .element-box {
+        margin-bottom: 2rem;
     }
     .intro-area .program-intro .element-box .intro-thum {
         display: block;
@@ -1543,12 +1549,12 @@
     .intro-area .program-intro .element-box .brief-info li {
         font-size: 1.4rem;
     }
-    .intro-area .program-intro .element-box .brief-info li:first-child {
+    /* .intro-area .program-intro .element-box .brief-info li:first-child {
         width: 65%;
     }
     .intro-area .program-intro .element-box .brief-info li:last-child {
         width: 35%;
-    }
+    } */
     .intro-area .program-intro .element-box .brief-info li i {
         font-size: 1.4rem;
         margin-right: .5rem;
@@ -1571,10 +1577,10 @@
     .intro-area .promotion-intro .inner-content {
         text-align: right;
     }
-    .intro-area .promotion-intro .thum-img {
-        height: 10.8rem;
+    .intro-area .promotion-intro .promo-box {
         border-radius: .5rem;
         margin-bottom: 1.8rem;
+        height: 10.8rem;
     }
     .intro-area .promotion-intro .thum-img .thum-txt p {
         font-size: 2rem;
@@ -2193,6 +2199,34 @@
     }
     .row-floor .cm-artice .stay-info li:last-child {
         font-size: 1.5rem;
+    }
+    #mypage .swiper-container {
+        height: 100% !important;
+    }
+    #myBooking .pageHead .tit {
+        width: 100%;
+    }
+    #myBooking .pageHead .sliderNum {
+        width: 100%;
+        padding-right: 0;
+    }
+    #myBooking .swiper-button-prev,
+    #myBooking .swiper-container-rtl .swiper-button-next {
+        top: 90px !important;
+        left: auto !important;
+        right: 165px;
+        width: auto !important;
+    }
+    #myBooking .swiper-button-next,
+    #myBooking .swiper-container-rtl .swiper-button-prev {
+        top: 90px!important;
+        right: 140px !important;
+    }
+    #myBooking .pageHead .sliderNum p {
+        font-weight: 400;
+    }
+    #myBooking .pageHead .sliderNum p span {
+        font-weight: 400;
     }
     /* my : no_login */
     #mypage .inquiry-form {

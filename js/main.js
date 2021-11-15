@@ -26,15 +26,17 @@ window.onload = function() {
     });
 
 
-    // mypage modal common 
+    // 21/11/10 mypage modal common 
     $("#mypage .information table .edit-btn").click(function() {
-        $(".modal-bg").addClass("show");
+        $(".modalWrap").show();
+    });
+    $("#modal .modalHeader .hide-btn").click(function() {
+        $(".modalWrap").hide();
     });
 
     var modals = document.getElementsByClassName("edit-modal");
     var btns = document.getElementsByClassName("edit-btn");
     var hide_btn01 = document.getElementsByClassName("hide-btn");
-    var hide_btn02 = document.getElementsByName("hide-btn");
     var funcs = [];
 
     function Modal(num) {
@@ -44,9 +46,6 @@ window.onload = function() {
                 modals[num].style.display = "block";
             };
             hide_btn01[num].onclick = function() {
-                modals[num].style.display = "none";
-            };
-            hide_btn02[num].onclick = function() {
                 modals[num].style.display = "none";
             };
         };
@@ -59,7 +58,7 @@ window.onload = function() {
         funcs[j]();
     }
 
-
+    //////////////////////////////////////////////////////
     // detail_popup
 
     var popups = document.getElementsByClassName("zoom-popup");
@@ -94,8 +93,9 @@ window.onload = function() {
     });
 
 
-    // mypage modal tag
-    $("#modal .modalBody .tag-form .tag-list input").click(function() {
+    // 21/11/10 mypage modal tag
+    $("#modal .modalBody .tag-form .tag-list input+label").click(function() {
+        $("#modal .modalBody .tag-form .tag-list input+label").removeClass("on");
         $(this).addClass("on")
     });
 
@@ -105,27 +105,9 @@ window.onload = function() {
 
     });
 
-    // booking step_by_step 
-    $("#booking .stay-schedule .next-btn").click(function() {
-        $("#booking .room-type").show();
-        var scrollPosition = $("#booking .room-type").offset().top;
-        $("body,html").animate({
-            scrollTop: scrollPosition
-        }, 500);
-
-        return false;
-    });
-    // 21/10/29 js 수정
-    $("#booking .room-type .room-info .info-txt .move-link").click(function() {
-        $("#booking .option-select").addClass("show");
-        var scrollPosition = $("#booking .option-select").offset().top;
-        $("body,html").animate({
-            scrollTop: scrollPosition
-        }, 500);
-
-        return false;
-    });
+    // 21/11/03 line 128 alert 추가 및 animation 추가
     $("#booking .option-select .next-btn").click(function() {
+
         $("#booking .customer-info").addClass("show");
         var scrollPosition = $("#booking .customer-info").offset().top;
         $("body,html").animate({
@@ -135,16 +117,21 @@ window.onload = function() {
         return false;
 
     });
-    $("#booking .customer-info .next-btn").click(function() {
-        $(".popNoti-bg").addClass("show");
-        $("#modal.noti-modal").addClass("show");
-    });
+
+
     $("#modal.noti-modal .modalFooter input").click(function() {
         $("#modal.noti-modal").removeClass("show");
         $("#booking .agreement").addClass("show");
         $("#booking .total-price").show();
-    });
 
+        var scrollPosition = $("#booking .agreement").offset().top;
+        $("body,html").animate({
+            scrollTop: scrollPosition
+        }, 500);
+
+        return false;
+    });
+    ///////////////////////////////////////////////////////////////
 
     // booking tab_menu 
     $("#booking .room-type .tab-menu input").click(function() {
@@ -273,6 +260,11 @@ window.onload = function() {
         $("#play .tab-menu").find("input[type='button']").eq(11).addClass("on").siblings().removeClass("on");
         $("#play .tag-content").find(".tab12").addClass("current");
         tit_Name.text("#액티비티");
+    }
+    if (location.hash == "#kids") {
+        $("#play .tab-menu").find("input[type='button']").eq(12).addClass("on").siblings().removeClass("on");
+        $("#play .tag-content").find(".tab13").addClass("current");
+        tit_Name.text("#Kids");
     }
 
 
@@ -414,7 +406,7 @@ window.onload = function() {
     }
 
     // 2021/08/02 tag-search tab 활성화
-
+    $("#tagSearch .tagContents .wrap-content").removeClass("current");
     $("#tagSearch .tab-menu input[type='button']").on("click", function() {
 
         var search_Name = $(this).val();
@@ -492,6 +484,11 @@ window.onload = function() {
         $("#tagSearch .tab-menu").find("input[type='button']").eq(11).addClass("on").siblings().removeClass("on");
         $("#tagSearch .tagContents").find(".tab12").addClass("current");
         tagSearch_Name.text("#액티비티");
+    }
+    if (location.hash == "#tb-kids") {
+        $("#tagSearch .tab-menu").find("input[type='button']").eq(12).addClass("on").siblings().removeClass("on");
+        $("#tagSearch .tagContents").find(".tab13").addClass("current");
+        tagSearch_Name.text("#Kids");
     }
 
 

@@ -489,7 +489,6 @@
 }
 
 #booking .room-type .tabContent .empty-box {
-    display: none;
     text-align: center;
     margin-top: 50px;
 }
@@ -894,12 +893,14 @@
     background: #1b1c1d;
     margin-bottom: 20px;
     position: relative;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .intro-area .promotion-intro .promo-box .thum-img {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    filter: blur(2px);
 }
 
 .intro-area .promotion-intro .promo-box .thum-txt {
@@ -2100,6 +2101,68 @@
     margin-bottom: 20px;
 }
 
+#mypage .swiper-container {
+    background: transparent;
+    height: 100%;
+}
+
+#mypage .swiper-button-next i,
+#mypage .swiper-button-prev i {
+    font-size: 24px;
+}
+
+#mypage .swiper-button-next:after,
+#mypage .swiper-button-prev:after {
+    display: none;
+}
+
+#myBooking .pageHead {
+    font-size: 0;
+}
+
+#myBooking .pageHead .tit {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 160px);
+}
+
+#myBooking .pageHead .sliderNum {
+    display: inline-block;
+    vertical-align: middle;
+    width: 160px;
+    text-align: right;
+    padding-right: 30px;
+}
+
+#myBooking .pageHead .sliderNum p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+#myBooking .pageHead .sliderNum p span {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+#myBooking .swiper-button-next,
+#myBooking .swiper-button-prev {
+    height: auto;
+}
+
+#myBooking .swiper-button-prev,
+#myBooking .swiper-container-rtl .swiper-button-next {
+    top: 43px;
+    left: auto;
+    right: 190px;
+}
+
+#myBooking .swiper-button-next,
+#myBooking .swiper-container-rtl .swiper-button-prev {
+    top: 43px;
+    right: 170px;
+}
+
 
 /* my : no_login */
 
@@ -2163,6 +2226,7 @@
     flex-basis: 33.3%;
     padding: 0 15px;
     margin-bottom: 30px;
+    overflow: hidden;
 }
 
 

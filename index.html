@@ -101,11 +101,11 @@
                         <!-- 21/11/02 line 101 워딩 수정 -->
                         <div class="selectBox person-sel banner-sel" style="margin-right: 30px;">
                             <select name="" id="" class="mCustomScrollbar" data-mcs-theme="dark-thick">
-                                <option value="">객실 수 1</option>
-                                <option value="">객실 수 2</option>
-                                <option value="">객실 수 3</option>
-                                <option value="">객실 수 4</option>
-                                <option value="">객실 수 5</option>
+                                <option>객실 수 1</option>
+                                <option>객실 수 2</option>
+                                <option>객실 수 3</option>
+                                <option>객실 수 4</option>
+                                <option>객실 수 5</option>
                             </select>
                         </div>
                         <!-- end selectBox -->
@@ -133,7 +133,7 @@
                     </div>
                     <!-- end auto-rule -->
                     <div class="view-link">
-                        <a href="#">보러가기</a>
+                        <a href="#" onclick="viewBooking();">보러가기</a>
                     </div>
                     <!-- end view-link -->
                 </div>
@@ -669,7 +669,7 @@
                         <p class="tag-name">#액티비티</p>
                     </div>
                     <!-- end tag-box -->
-                    <div class="tag-box">
+                    <div class="tag-box" onclick="location.href='tag_search.html#tb-kids'">
                         <p class="tag-name">#Kids</p>
                     </div>
                     <!-- end tag-box -->
@@ -935,9 +935,9 @@
         $(function() {
 
             // 21/10/26 banner alert msg change
-            $("#banner.rest-noti .view-link").click(function() {
-                alert("홈페이지 예약 준비중입니다. 이용에 불편을 드려 죄송합니다. (여기어때, 야놀자, 네이버 검색 후 예약 가능)");
-            });
+            // $("#banner.rest-noti .view-link").click(function() {
+            //     alert("홈페이지 예약 준비중입니다. 이용에 불편을 드려 죄송합니다. (여기어때, 야놀자, 네이버 검색 후 예약 가능)");
+            // });
 
             $('select').selectric({
                 disableOnMobile: false,
@@ -950,7 +950,7 @@
                 minDate: 0,
                 onSelect: function(dateText, inst) {
                     var date = $(this).val();
-                    // console.log($(date));
+
                 },
                 dayNames: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -983,7 +983,6 @@
                 minDate: 0,
                 onSelect: function(dateText, inst) {
                     var date = $(this).val();
-                    // console.log($(date));
                 },
                 dayNames: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -1000,7 +999,6 @@
                 minDate: 0,
                 onSelect: function(dateText, inst) {
                     var date = $(this).val();
-                    // console.log($(date));
                 },
                 dayNames: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -1012,6 +1010,20 @@
             });
 
         });
+
+
+        function viewBooking() {
+            if (!$("#rest_dateIn").val() || !$("#rest_dateOut").val()) {
+                if (!$("#rest_dateIn").val()) {
+                    alert("체크인 날짜를 입력하세요.");
+                }
+                if (!$("#rest_dateOut").val()) {
+                    alert("체크아웃 날짜를 입력하세요.");
+                }
+            } else {
+                window.location.href = "booking.html"
+            }
+        }
     </script>
 </body>
 

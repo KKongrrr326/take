@@ -256,7 +256,7 @@
                     </div>
                     <!-- end inner-content -->
                     <div class="next-btn">
-                        <a href="#moveTab01">이용 가능한 객실 보기</a>
+                        <a href="#moveTab01" onclick="moveStep02();">이용 가능한 객실 보기</a>
                     </div>
                     <!-- end view-btn -->
                 </section>
@@ -343,7 +343,7 @@
                             </div>
                             <!-- end room-info -->
                             <!-- 21/11/05 empty-box add -->
-                            <div class="empty-box">
+                            <div class="empty-box" style="display: none;">
                                 <p>해당 조건에 이용 가능한 객실이 없습니다.</p>
                             </div>
                             <!---------------------------->
@@ -352,7 +352,7 @@
                         <div class="tabContent">
                             <!-- 21/11/05 empty-box add -->
                             <div class="empty-box">
-                                <p>해당 조건에 이용 가능한 객실이 없습니다.</p>
+                                <p>해당 조건에 이용 가능한 패키지가 없습니다.</p>
                             </div>
                             <!---------------------------->
                         </div>
@@ -730,6 +730,13 @@
                                         </li>
                                         <li>반려견 동반 입실을 금지합니다.</li>
                                     </ul>
+                                    <ul>
+                                        <li>
+                                            <p class="point"></p>
+                                        </li>
+                                        <li>기준인원 추가시 성인 3만원, 소인 만원 추가 비용 발생(침구 추가 불가)<br> 객실별 기준인원<br> Take 1 : 성인 1인 (최대 성인 1인)<br> Take 2 : 성인 2인 (최대 성인 2인)<br> Take 3 : 성인 2인 (최대 성인 3인)<br> Take 4 : 성인 2인, 소인 1인(최대 성인 2인, 소인 2인)
+                                        </li>
+                                    </ul>
                                 </div>
                                 <!-- end noti -->
                                 <div class="noti">
@@ -794,6 +801,8 @@
     <script src="plugin/selectBox_custom/jquery.selectric.js"></script>
     <script>
         var n = "";
+        var check_in = "";
+        var check_out = "";
         $(function() {
 
             $('select').selectric({
@@ -869,8 +878,8 @@
                 dateFormat: 'yy-mm-dd',
                 minDate: 0,
                 onSelect: function(dateText, inst) {
-                    var date = $(this).val();
-                    checkIn.innerHTML = date;
+                    check_in = $(this).val();
+
                 },
                 dayNames: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -881,14 +890,13 @@
 
             });
 
-
             // canlendar_checkOut
             $("#datepicker-checkOut").datepicker({
                 dateFormat: 'yy-mm-dd',
                 minDate: 0,
                 onSelect: function(dateText, inst) {
-                    var date = $(this).val();
-                    checkOut.innerHTML = date;
+                    check_out = $(this).val();
+
                 },
                 dayNames: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
@@ -897,14 +905,8 @@
                     $("#datepicker-checkIn").datepicker("option", "maxDate", selectedDate);
                 }
 
-
             });
 
-            // 21/11/03 line 881 체크인/체크아웃 placeholder 추가 
-            var now = new Date();
-            var tomorrow = new Date(now.setDate(now.getDate() + 1));
-            $("#datepicker-checkIn").datepicker().datepicker("setDate", new Date());
-            $("#datepicker-checkOut").datepicker().datepicker("setDate", tomorrow);
 
             (function($) {
                 $(window).on("load", function() {
@@ -933,6 +935,25 @@
         });
 
 
+        // line 938 2021/11/15 추가
+        function moveStep02() {
+            if (!$("#datepicker-checkIn").val() || !$("#datepicker-checkOut").val()) {
+                alert("체크인/체크아웃 날짜를 선택하세요.")
+
+            } else {
+                $("#booking .stay-schedule .next-btn").click(function() {
+                    $("#booking .room-type").show();
+                    var scrollPosition = $("#booking .room-type").offset().top;
+                    $("body,html").animate({
+                        scrollTop: scrollPosition
+                    }, 500);
+
+                    return false;
+                });
+            }
+
+        }
+
         function moveStep04() {
             if (n != "y") {
                 var gen_option = $("select[name='gender-sel']").val();
@@ -952,8 +973,6 @@
 
                 }
             }
-
-
 
         }
     </script>
